@@ -163,6 +163,10 @@ section.services {
 section.services .content .services-title {
   font-weight: var(--font-semibold);
 }
+.justify-text {
+  text-align: justify;
+}
+
 
 /* About */
 section.about {
