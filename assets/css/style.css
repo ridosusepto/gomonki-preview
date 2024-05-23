@@ -1,5 +1,6 @@
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
 /* Variables CSS */
 :root {
   /* Colors */
@@ -8,6 +9,10 @@
   --yellow-color: #FEC65E;
   --white-color: #FFFFFF;
   --black-color: #323232;
+  --light-white: #FBF9F9;
+  --persian-rose: #ff0099; /* Warna pink */
+  --safety-orange: #BA2530; /* Warna oranye */
+  --gradient: linear-gradient(to left top, var(--persian-rose), var(--safety-orange));
   /* Font & Typography */
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 58px;
@@ -18,6 +23,80 @@
   /* Font Weight */
   --font-semibold: 600;
   --font-medium: 500;
+
+  /* external code  */
+  /**
+   * colors
+   */
+
+  --safety-orange: hsl(25, 100%, 50%);
+  --lavender-gray: hsl(230, 19%, 81%);
+  --persian-rose: hsl(328, 100%, 59%);
+  --red-crayola: hsl(341, 100%, 49%);
+  --eerie-black: hsl(240, 6%, 10%);
+  --light-gray: hsl(0, 0%, 80%);
+  --cultured-2: hsl(210, 60%, 98%);
+  --platinum: hsl(0, 0%, 90%);
+  --gray-web: hsl(220, 5%, 49%);
+  --cultured: hsl(0, 0%, 93%);
+  --black_10: hsla(0, 0%, 0%, 0.1);
+  --black_5: hsla(0, 0%, 0%, 0.05);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 14%, 98%);
+  --black: hsl(0, 0%, 0%);
+
+  /**
+    * gradient color
+    */
+
+  
+
+  /**
+    * typography
+    */
+
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-league-spartan: 'League Spartan', sans-serif;
+
+  --fs-1: 3.5rem;
+  --fs-2: 3rem;
+  --fs-3: 2.1rem;
+  --fs-4: 1.7rem;
+  --fs-5: 1.4rem;
+  --fs-6: 1.3rem;
+
+  --fw-700: 700;
+  --fw-500: 500;
+
+  /**
+    * spacing
+    */
+
+  --section-padding: 60px;
+
+  /**
+    * shadow
+    */
+
+  --shadow-1: 0 6px 24px var(--black_5);
+  --shadow-2: 0 2px 28px var(--black_10);
+
+  /**
+    * border radius
+    */
+
+  --radius-2: 2px;
+  --radius-5: 5px;
+  --radius-8: 8px;
+
+  /**
+    * transition
+    */
+
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
 }
 
 body {
@@ -67,7 +146,9 @@ a:hover {
   background-color: var(--primary-color);
   border: none;
 }
-.btn-primary:hover, .btn-primary:focus {
+
+.btn-primary:hover,
+.btn-primary:focus {
   filter: drop-shadow(0px 10px 30px rgba(186, 37, 48, 0.15));
   background-color: var(--primary-color);
 }
@@ -77,7 +158,9 @@ a:hover {
   color: var(--primary-color);
   border: none;
 }
-.btn-primary-light:hover, .btn-primary-light:focus {
+
+.btn-primary-light:hover,
+.btn-primary-light:focus {
   color: var(--black-color);
   background-color: var(--primary-light-color);
 }
@@ -91,10 +174,12 @@ a:hover {
   padding: 0;
   font-size: 30px;
 }
+
 .btn-video-play i {
   line-height: 3rem;
   color: var(--yellow-color);
 }
+
 .btn-video-play:hover i {
   color: var(--primary-color);
 }
@@ -119,18 +204,23 @@ a:hover {
   padding: 12px 0;
   transition: all 0.5s ease;
 }
+
 .navbar .navbar-brand span {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
 }
+
 .navbar .nav-link {
   margin-right: 39px;
   font-weight: var(--font-medium);
   color: var(--black-color);
 }
-.navbar .nav-link:hover, .navbar .nav-link:focus {
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
   color: var(--primary-color);
 }
+
 .navbar .nav-link .active {
   color: var(--primary-color);
 }
@@ -142,15 +232,19 @@ a:hover {
 /* Home */
 section.home {
   padding-top: 7rem;
+  margin-bottom: 100px;
 }
+
 section.home .text-home-bold {
   font-size: var(--biggest-font-size);
   line-height: 87px;
 }
+
 section.home .text-home-reguler {
   font-size: var(--normal-font-size);
   line-height: 27px;
 }
+
 section.home .home-btn .video-play {
   font-weight: var(--font-medium);
   padding: 1rem;
@@ -160,12 +254,14 @@ section.home .home-btn .video-play {
 section.services {
   padding-top: 7rem;
 }
+
 section.services .content .services-title {
   font-weight: var(--font-semibold);
 }
-.justify-text {
+
+/* .justify-text {
   text-align: justify;
-}
+} */
 
 
 /* About */
@@ -177,35 +273,99 @@ section.about {
 section.menu {
   padding-top: 7rem;
 }
+
 section.menu .card-menu {
   filter: drop-shadow(0px 5.42857px 40.7143px rgba(0, 0, 0, 0.05));
   border-radius: 10px;
   padding: 1.2rem;
+  height: 100%;
+  /* Membuat tinggi kartu seragam */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Memastikan konten diatur dengan baik */
 }
+
 section.menu .card-menu .item {
   position: relative;
+  height: 100%;
+  /* Membuat tinggi item seragam */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Memastikan konten diatur dengan baik */
 }
-section.menu .card-menu .item img {
-  width: 100%;
-}
+
 section.menu .card-menu .item .menu-title {
   font-weight: var(--font-semibold);
+  font-size: 1.25rem;
+  /* Ukuran font yang lebih besar */
+  margin-bottom: 0.5rem;
+  /* Memberikan jarak bawah */
+  text-align: left;
+  /* Memastikan teks sejajar kiri */
 }
+
+section.menu .card-menu .item ul {
+  padding-left: 20px;
+  list-style: none;
+  /* Menghilangkan bullet points default */
+  margin-bottom: 1rem;
+  /* Memberikan jarak bawah */
+}
+
+section.menu .card-menu .item ul li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  /* Ukuran font yang lebih besar */
+  text-align: left;
+  /* Memastikan teks sejajar kiri */
+}
+
+section.menu .card-menu .item ul li i {
+  margin-right: 8px;
+  color: var(--primary-color);
+  /* Menyesuaikan dengan warna ikon lainnya */
+}
+
+section.menu .card-menu .item .price {
+  margin-top: 1rem;
+  /* Memberikan jarak atas */
+  margin-bottom: 1rem;
+  /* Memberikan jarak bawah */
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  font-weight: var(--font-bold);
+}
+
+section.menu .card-menu .item .btn-cart {
+  margin-top: 1rem;
+  /* Memberikan jarak atas */
+}
+
+
 
 /* Testimonials */
 section.testimonials {
   padding-top: 7rem;
+  /* background-color: var(--light-white); */
 }
+
 section.testimonials .content-testimonials .name-testimonials {
   font-weight: var(--font-semibold);
 }
+
 section.testimonials .content-testimonials i {
   color: var(--yellow-color);
   font-size: 1.3rem;
 }
+
 section.testimonials .carousel-indicators {
   bottom: -3rem;
 }
+
 section.testimonials .carousel-indicators button {
   width: 0.7rem;
   height: 0.7rem;
@@ -223,14 +383,17 @@ section.gallery {
 section.newslatter {
   padding-top: 7rem;
 }
+
 section.newslatter .newslatter-content {
   padding: 6rem;
   border-radius: 10px;
 }
+
 section.newslatter .newslatter-content .form-newslatter {
   display: flex;
   justify-content: center;
 }
+
 section.newslatter .newslatter-content .form-newslatter input.form-control {
   border-radius: 10px !important;
   border: none;
@@ -238,12 +401,15 @@ section.newslatter .newslatter-content .form-newslatter input.form-control {
   padding: 1rem;
   height: 3.3rem;
 }
+
 section.newslatter .newslatter-content .form-newslatter input.form-control::-moz-placeholder {
   font-size: 15px !important;
 }
+
 section.newslatter .newslatter-content .form-newslatter input.form-control:-ms-input-placeholder {
   font-size: 15px !important;
 }
+
 section.newslatter .newslatter-content .form-newslatter input.form-control::placeholder {
   font-size: 15px !important;
 }
@@ -252,20 +418,25 @@ section.newslatter .newslatter-content .form-newslatter input.form-control::plac
 footer.footer-section {
   padding-top: 10rem;
 }
+
 footer.footer-section .footer-brand span {
   font-weight: var(--font-medium);
   font-size: var(--normal-font-size);
 }
+
 footer.footer-section .footer-content span {
   font-weight: var(--font-medium);
   font-size: var(--normal-font-size);
 }
+
 footer.footer-section .footer-link li a {
   color: var(--black-color);
 }
+
 footer.footer-section .footer-link li a:hover {
   color: var(--primary-color);
 }
+
 footer.footer-section .copyright {
   font-size: var(--smaller-font-size);
   padding: 1rem;
@@ -276,69 +447,347 @@ footer.footer-section .copyright {
     width: 84%;
   }
 }
+
 @media (max-width: 991px) {
   .navbar {
     padding: 12px 0;
   }
+
   .navbar a.nav-link {
     padding: 0.6rem 0;
   }
+
   .navbar a.btn {
     margin-top: 10px;
   }
+
   section.home .text-home-bold {
     font-size: var(--h1-font-size);
     line-height: 65px;
   }
+
   section.home img {
     margin-top: 30px;
   }
+
   section.services {
     padding-top: 5rem;
   }
+
   section.services p {
     margin-bottom: 0 !important;
   }
+
   section.about {
     padding-top: 5rem;
   }
+
   section.about .about-content {
     margin-top: 30px;
   }
+
   section.menu,
-section.testimonials {
+  section.testimonials {
     padding-top: 5rem;
   }
+
   section.newslatter {
     padding-top: 5rem;
   }
+
   section.newslatter .newslatter-content {
     padding: 3rem;
   }
+
   section.newslatter .form-newslatter {
     display: block !important;
   }
+
   section.newslatter .form-newslatter .form-control {
     margin-bottom: 20px;
   }
+
   section.newslatter .w-50 {
     width: 100% !important;
   }
+
   section.gallery {
     padding-top: 6rem;
   }
+
   section.gallery .gallery-img {
     margin-top: 30px;
   }
+
   footer.footer-section {
     padding-top: 7rem;
   }
 }
+
 @media (max-width: 414px) {
   footer.footer-section .col-md-7 {
     margin-top: 15px;
   }
+
   footer.footer-section .col-md-7 .col-md-3 {
     margin-bottom: 15px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/* external code  */
+/* about  */
+.about :is(.section-subtitle, .section-title, .section-text) {
+  text-align: left;
+}
+
+.about-item {
+  margin-block: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.about-item .icon {
+  color: var(--primary-color);
+  font-size: 20px;
+  --ionicon-stroke-width: 50px;
+}
+
+.about-item .text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.about-item p {
+  font-size: 14px;
+  margin: 5px 0 0 0;
+  color: #555;
+}
+
+.about-item .span {
+  color: var(--eerie-black-1);
+  font-family: var(--ff-league_spartan);
+}
+
+/* CTA */
+.cta {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--gradient);
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.cta-subtitle,
+.cta .section-title {
+  color: var(--white-1);
+}
+
+.cta-subtitle {
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-align: center;
+  margin-bottom: 12px;
+  /* Memberikan jarak bawah */
+}
+
+.cta .section-title {
+  margin-block: 12px 18px;
+}
+
+.cta .btn {
+  margin-top: 24px;
+  /* Memberikan jarak atas */
+  margin-inline: auto;
+  color: black;
+  /* Warna teks hitam */
+  background-color: white;
+  /* Latar belakang putih */
+  transition: all 0.3s ease;
+  /* Menambahkan transisi animasi */
+  border: none;
+}
+
+.cta .btn:hover {
+  color: white;
+  /* Warna teks putih saat hover */
+  background-color: black;
+  /* Latar belakang hitam saat hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .cta {
+    padding: 60px 0;
+  }
+}
+
+/* Menu */
+section.chart {
+  margin-top: 100px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: var(--light-white);
+  /* Mengubah latar belakang menjadi warna utama */
+}
+
+section.chart .container {
+  text-align: center;
+  /* Memusatkan teks dalam container */
+}
+
+section.chart h2 {
+  font-size: 2.5rem;
+  font-weight: var(--font-bold);
+  margin-top: 1rem;
+  color: var(--dark);
+  /* Mengatur warna teks utama */
+}
+
+section.chart h2 span.text-primary {
+  color: var(--primary-color);
+  /* Mengatur warna teks berwarna primer */
+}
+
+section.chart .card-menu {
+  filter: drop-shadow(0px 5.42857px 40.7143px rgba(0, 0, 0, 0.05));
+  border-radius: 10px;
+  padding: 1.2rem;
+  background-color: var(--primary-color);
+  /* Warna latar belakang kartu */
+  height: 100%;
+  /* Membuat tinggi kartu seragam */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Memastikan konten diatur dengan baik */
+}
+
+section.chart .card-menu .item {
+  position: relative;
+  height: 100%;
+  /* Membuat tinggi item seragam */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Memastikan konten diatur dengan baik */
+}
+
+section.chart .card-menu .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* Menambah sudut bulat pada gambar */
+  margin-bottom: 1rem;
+  /* Memberikan jarak bawah */
+}
+
+section.chart .card-menu .item .menu-title {
+  font-weight: var(--font-semibold);
+  font-size: 1.25rem;
+  /* Ukuran font lebih besar untuk menarik perhatian */
+  color: var(--dark);
+  /* Warna teks judul */
+  margin-bottom: 0.5rem;
+  /* Memberikan jarak bawah */
+}
+
+section.chart .card-menu .item ul {
+  padding-left: 0;
+  /* Menghilangkan padding kiri default */
+  list-style: none;
+  /* Menghilangkan bullet points default */
+  margin-bottom: 1rem;
+  /* Memberikan jarak bawah */
+  text-align: left;
+  /* Mengatur teks dalam ul */
+}
+
+section.chart .card-menu .item ul li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  /* Ukuran font sedang */
+  color: var(--secondary);
+  /* Mengatur warna teks sekunder */
+}
+
+section.chart .card-menu .item ul li i {
+  margin-right: 8px;
+  color: var(--primary-color);
+  /* Menyesuaikan dengan warna ikon lainnya */
+}
+
+section.chart .card-menu .item .price {
+  margin-top: 1rem;
+  /* Memberikan jarak atas */
+  margin-bottom: 1rem;
+  /* Memberikan jarak bawah */
+  font-size: 1.5rem;
+  /* Ukuran font harga lebih besar */
+  color: var(--primary-color);
+  font-weight: var(--font-bold);
+}
+
+section.chart .card-menu .item .btn-cart {
+  margin-top: 1rem;
+  /* Memberikan jarak atas */
+}
+
+.teks-coret {
+  text-decoration: line-through;
+  font-size: 30px;
+  color: var(--white-color);
+}
+
+.teks-coret span {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--secondary-color); /* Assuming --secondary-color is defined in your CSS */
+}
+
+
+.menu-title {
+  text-align: left;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  section.chart {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section.chart h2 {
+    font-size: 2rem;
+  }
+
+  section.chart .card-menu .item ul li {
+    font-size: 0.875rem;
+    /* Ukuran font lebih kecil untuk tampilan mobile */
+  }
+}
+
+
