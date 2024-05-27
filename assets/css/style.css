@@ -374,44 +374,58 @@ section.testimonials .carousel-indicators button {
   margin-right: 0.2rem;
 }
 
-/* Newslatter */
-section.gallery {
-  padding-top: 8rem;
-}
-
-/* Newslatter */
-section.newslatter {
+/* Newsletter */
+section.newsletter {
   padding-top: 7rem;
 }
 
-section.newslatter .newslatter-content {
-  padding: 6rem;
+section.newsletter .newsletter-content {
+  padding: 4rem;
   border-radius: 10px;
 }
 
-section.newslatter .newslatter-content .form-newslatter {
+section.newsletter .newsletter-content .form-newsletter {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-section.newslatter .newslatter-content .form-newslatter input.form-control {
+section.newsletter .newsletter-content .form-newsletter .form-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+section.newsletter .newsletter-content .form-newsletter .form-control {
+  width: 600px; /* Lebar penuh dari form group */
   border-radius: 10px !important;
   border: none;
-  margin-right: 1rem;
   padding: 1rem;
-  height: 3.3rem;
 }
 
-section.newslatter .newslatter-content .form-newslatter input.form-control::-moz-placeholder {
+section.newsletter .newsletter-content .form-newsletter input.form-control::placeholder,
+section.newsletter .newsletter-content .form-newsletter textarea.form-control::placeholder {
   font-size: 15px !important;
 }
 
-section.newslatter .newslatter-content .form-newslatter input.form-control:-ms-input-placeholder {
-  font-size: 15px !important;
+section.newsletter .newsletter-content .form-newsletter button.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  color: var(--primary-color);
+  margin-top: 1rem;
 }
 
-section.newslatter .newslatter-content .form-newslatter input.form-control::placeholder {
-  font-size: 15px !important;
+/* Responsiveness */
+@media (max-width: 768px) {
+  section.newsletter .newsletter-content {
+    padding: 2rem; /* Mengurangi padding untuk layar kecil */
+  }
+
+  section.newsletter .newsletter-content .form-newsletter .form-group,
+  section.newsletter .newsletter-content .form-newsletter .form-control {
+    width: 300px; /* Sesuaikan lebar maksimal untuk layar kecil */
+  }
 }
 
 /* Footer */

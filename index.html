@@ -295,14 +295,10 @@
     <!-- CTA -->
     <section class="section cta" aria-label="cta" style="background-image: url('./assets/images/cta-bg.jpg')">
         <div class="container text-center">
-
             <p class="cta-subtitle"> Kuasai Animasi 3D Sekarang!</p>
-
             <h2 class="h2 section-title">Segera kuasai animasi karakter 3D! Daftar sekarang dan temukan potensi Anda
                 dalam dunia animasi!</h2>
-
             <a href="index.html#chart" class="btn btn-secondary">Daftar Kursus</a>
-
         </div>
     </section>
     <!-- CTA end -->
@@ -434,8 +430,6 @@
         </div>
     </section>
     <!-- Testimonials Section Close -->
-
-
     <!-- Gallery Section Open -->
     <!-- <section class="gallery" id="gallery">
         <div class="container">
@@ -484,11 +478,10 @@
                                 <li><i class='bx bx-check-double'></i> Umpan Balik dan Bimbingan</li>
                                 <li><i class='bx bx-check-double'></i> Sumber Daya Tambahan</li>
                             </ul>
-
                             <div class="d-flex flex-column align-items-start mt-3">
                                 <h5 class="text-secondary teks-coret">Rp 980.000</h5>
                                 <h3 class="text-primary fw-bold">Rp 900.000</h3>
-                                <a href="#" class="btn btn-cart shadow-none text-white bg-primary mt-2">Klik Untuk
+                                <a href="https://app.sandbox.midtrans.com/payment-links/1716794828256" class="btn btn-cart shadow-none text-white bg-primary mt-2">Klik Untuk
                                     Daftar Kursus</a>
                             </div>
                         </div>
@@ -498,27 +491,42 @@
         </div>
     </section>
 
-    <!-- Newslatter Section Open -->
-    <section class="newslatter" id="promo">
+    <!-- Newsletter Section Open -->
+    <section class="newsletter" id="promo">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="newslatter-content bg-primary text-center" data-aos="fade-up" data-aos-duration="1000">
-                        <h2 class="title-newslatter fw-bold text-white">Masih ragu? Jangan sungkan untuk menghubungi
+                    <div class="newsletter-content bg-primary text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <h2 class="title-newsletter fw-bold text-white">Masih ragu? Jangan sungkan untuk menghubungi
                             kami jika Anda memiliki pertanyaan atau ingin membahas sesuatu</h2>
                         <p class="text-white mt-3">Jaminan kepuasan pelanggan untuk memberikan kepercayaan kepada calon
                             peserta.</p>
-                        <div class="form-newslatter mt-5">
-                            <input type="email" class="form-control w-50 shadow-none"
-                                placeholder="info.gomonki@gmail.com">
-                            <a href="#" class="btn btn-primary-light shadow-none">Kirim Pertanyaan</a>
+                        <div class="form-newsletter mt-5">
+                            <form id="form">
+                                <div class="form-group mb-2">
+                                    <input type="text" id="fullName" name="fullName"
+                                        class="form-control shadow-none mx-auto" placeholder="Full Name">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="email" id="email_id" name="email_id"
+                                        class="form-control shadow-none mx-auto" placeholder="Email">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <textarea id="message" name="message" class="form-control shadow-none mx-auto"
+                                        rows="4" placeholder="Message"></textarea>
+                                </div>
+                                <button type="submit" id="button" class="btn btn-light shadow-none btn-submit">Kirim
+                                    Pertanyaan</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Newslatter Section Close -->
+    <!-- Newsletter Section Close -->
+
+    <!-- Newsletter Section Close -->
 
     <!-- About Section Open -->
     <section class="fqa" id="fqa">
@@ -609,7 +617,8 @@
                         <a href="#" class="footer-brand">
                             <img src="assets/img/gomonki.svg" class="me-3" alt="brand">
                             <span class="text-dark">Gomonki</span>
-                            <p class="text-secondary mt-3">Gomonki adalah perusahaan kursus animasi yang berkomitmen untuk memberdayakan individu dalam mengembangkan keterampilan animasi mereka. 
+                            <p class="text-secondary mt-3">Gomonki adalah perusahaan kursus animasi yang berkomitmen
+                                untuk memberdayakan individu dalam mengembangkan keterampilan animasi mereka.
                             </p>
                         </a>
                     </div>
@@ -683,6 +692,38 @@
     </script>
 
     <script src="assets/js/fqa.js"></script>
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('ZjEvJ2WDUrpDYkQRY');
+        })();
+    </script>
+    <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_ojje4l9';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Kirim Pertanyaan';
+                        alert('Sent!');
+                    }, (err) => {
+                        btn.value = 'Kirim Pertanyaan';
+                        alert(JSON.stringify(err));
+                    });
+            });
+    </script>
 
 </body>
 
